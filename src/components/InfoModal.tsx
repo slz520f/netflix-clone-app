@@ -9,12 +9,12 @@ import FavoriteButton from "./FavoriteButton";
 interface InfoModalProps{
 
     visible?:boolean;
-    onClose:any;
+    onClose:() => void;
 }
 const InfoModal:React.FC<InfoModalProps>=({visible,onClose})=>{
     const [isVisible,setIsVisible] = useState(!!visible);
     const {movieId}=useInfoModal();
-    const {data={}}=useMovie(movieId);
+    const {data={}}=useMovie(movieId||"");
     useEffect(()=>{
         setIsVisible(!!visible);
     },[visible]);

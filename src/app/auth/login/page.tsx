@@ -6,6 +6,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { ChangeEvent } from 'react'
 
 
 
@@ -84,19 +85,19 @@ const Auth=()=>{
                                 {variant==="register"&&(
                                     <Input
                                     label="Username"
-                                    onChange={(e:any)=>setName(e.target.value)}
+                                    onChange={(e: ChangeEvent<HTMLInputElement>)=>setName(e.target.value)}
                                     id="name"
                                     value={name}/>
                                 )}
                                 <Input
                                 label="Email"
-                                onChange={(e:any)=>setEmail(e.target.value)}
+                                onChange={(e: ChangeEvent<HTMLInputElement>)=>setEmail(e.target.value)}
                                 id="email"
                                 type="email"
                                 value={email}/>
                                 <Input
                                 label="Password"
-                                onChange={(e:any)=>setPassword(e.target.value)}
+                                onChange={(e: ChangeEvent<HTMLInputElement>)=>setPassword(e.target.value)}
                                 id="password"
                                 type="password"
                                 value={password}/>
